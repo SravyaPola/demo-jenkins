@@ -15,33 +15,7 @@ pipeline {
         stage('Cloning Git Repo') {
             steps {
                 script {
-                    sh 'git clone pipeline {
-    agent any
-    
-    environment {
-       APP_DIR='/var/lib/jenkins/workspace/my-jenkins/demo-jenkins' 
-    }
-
-    stages {
-        stage('Clean Workspace'){
-            steps{
-                cleanWs()
-            }
-        }
-        
-        stage('Cloning Git Repo') {
-            steps {
-                sh 'git clone "https://github.com/SravyaPola/demo-jenkins.git/"'
-            }
-        }
-        stage('Building Application') {
-            steps {
-                sh 'cd demo-jenkins && mvn clean install'
-            }
-        }
-
-    }
-}'
+                    sh 'git clone "https://github.com/SravyaPola/demo-jenkins.git"'
                 }
             }
         }

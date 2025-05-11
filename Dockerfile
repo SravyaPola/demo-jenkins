@@ -39,3 +39,14 @@ CMD ["java", "-jar", "myapp-0.0.1-SNAPSHOT.jar"]
 # RUN mkdir /logs
 # Run the application
 # CMD java -jar /app/myapp-0.0.1-SNAPSHOT.jar > /logs/app.log 2>&1
+
+
+# To perform docker volumes belo are the commands
+# Create logs directory
+# RUN mkdir /app/logs
+
+# Copy the packaged jar file from the build stage
+# COPY --from=build /app/target/myapp-0.0.1-SNAPSHOT.jar  /app/myapp-0.0.1-SNAPSHOT.jar
+
+# Run the application
+# CMD ["sh","-c","java -jar myapp-0.0.1-SNAPSHOT.jar > /app/logs/app.log 2>&1"]

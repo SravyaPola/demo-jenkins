@@ -32,5 +32,10 @@ EXPOSE 8081
 # Run the application
 CMD ["java", "-jar", "myapp-0.0.1-SNAPSHOT.jar"]
 
-# To bind the log files to app.log inside container
+# To bind the log files to app.log -- inside container
 # CMD java -jar /app/myapp-0.0.1-SNAPSHOT.jar > app.log 2>&1
+
+# To bind the logs in the host, so that even if container stops we can still see the logs in host -- inside host
+# RUN mkdir /logs
+# Run the application
+# CMD java -jar /app/myapp-0.0.1-SNAPSHOT.jar > /logs/app.log 2>&1
